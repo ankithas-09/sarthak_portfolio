@@ -375,28 +375,18 @@
               </div>
             </div>
           </div>
-          <form name="contact" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="300" netlify>
-            <div class="row gy-4">
-                <div class="col-md-6">
-                    <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                </div>
-                <div class="col-md-6">
-                    <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-                </div>
-                <div class="col-md-12">
-                    <input type="text" name="subject" class="form-control" placeholder="Subject" required>
-                </div>
-                <div class="col-md-12">
-                    <textarea name="message" class="form-control" rows="6" placeholder="Message" required></textarea>
-                </div>
-                <div class="col-md-12 text-center">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
-                    <button type="submit" class="submit-button">Send Message</button>
-                </div>
+          <form id="contact-form" method="POST" netlify action="/">
+            <div class="input-field">
+                <input type="text" class="form-control" name="name" id="name" required placeholder="Name">
             </div>
-        </form>        
+            <div class="input-field">
+                <input type="email" class="form-control" name="email" id="email" required placeholder="Email">
+            </div>
+            <div class="input-field">
+                <textarea class="form-control" name="message" id="message" required placeholder="Message"></textarea>
+            </div>
+            <button class="btn" type="submit">Submit</button>
+          </form>      
       </div>
   </section>
   
