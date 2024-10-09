@@ -969,7 +969,7 @@ p {
 
 .portfolio .portfolio-info .preview-link:hover,
 .portfolio .portfolio-info .details-link:hover {
-  color: var(--accent-color); /* Accent color on hover */
+  color: rgba(255, 255, 255, 0.8); /* Accent color on hover */
 }
 
 /* Grid Adjustments */
