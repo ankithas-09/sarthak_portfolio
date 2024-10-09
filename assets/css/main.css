@@ -909,100 +909,88 @@ p {
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
-.portfolio .portfolio-filters {
-  padding: 0;
-  margin: 0 auto 20px auto;
-  list-style: none;
-  text-align: center;
-}
-
-.portfolio .portfolio-filters li {
-  cursor: pointer;
-  display: inline-block;
-  padding: 0;
-  font-size: 16px;
-  font-weight: 600;
-  margin: 0 10px;
-  line-height: 1;
-  text-transform: uppercase;
-  margin-bottom: 5px;
-  transition: all 0.3s ease-in-out;
-}
-
-.portfolio .portfolio-filters li:hover,
-.portfolio .portfolio-filters li.filter-active {
-  color: #1c1569;
-}
-
-.portfolio .portfolio-filters li:first-child {
-  margin-left: 0;
-}
-
-.portfolio .portfolio-filters li:last-child {
-  margin-right: 0;
-}
-
-@media (max-width: 575px) {
-  .portfolio .portfolio-filters li {
-    font-size: 14px;
-    margin: 0 5px;
-  }
-}
-
 .portfolio .portfolio-item {
   position: relative;
+  overflow: hidden; /* Ensure hover effects and scaling look clean */
 }
 
-.portfolio .portfolio-item .portfolio-info {
+.portfolio .portfolio-item img {
+  width: 100%;
+  height: 250px; /* Uniform height */
+  object-fit: cover; /* Ensures images are cropped correctly to fit without distortion */
+  border-radius: 10px; /* Optional for a softer look */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.portfolio .portfolio-item:hover img {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.portfolio .portfolio-info {
   opacity: 0;
   position: absolute;
-  left: 30px;
-  right: 30px;
+  left: 20px;
+  right: 20px;
   bottom: 0;
   z-index: 3;
   transition: all ease-in-out 0.3s;
-  background: color-mix(in srgb, var(--background-color), transparent 10%);
+  background: rgba(0, 0, 0, 0.7); /* Transparent dark overlay */
+  color: white;
   padding: 15px;
-}
-
-.portfolio .portfolio-item .portfolio-info h4 {
-  font-size: 18px;
-  font-weight: 600;
-  padding-right: 50px;
-}
-
-.portfolio .portfolio-item .portfolio-info p {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  font-size: 14px;
-  margin-bottom: 0;
-  padding-right: 50px;
-}
-
-.portfolio .portfolio-item .portfolio-info .preview-link,
-.portfolio .portfolio-item .portfolio-info .details-link {
-  position: absolute;
-  right: 50px;
-  font-size: 24px;
-  top: calc(50% - 14px);
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  transition: 0.3s;
-  line-height: 0;
-}
-
-.portfolio .portfolio-item .portfolio-info .preview-link:hover,
-.portfolio .portfolio-item .portfolio-info .details-link:hover {
-  color: var(--accent-color);
-}
-
-.portfolio .portfolio-item .portfolio-info .details-link {
-  right: 14px;
-  font-size: 28px;
+  border-radius: 0 0 10px 10px; /* Match the image corners */
 }
 
 .portfolio .portfolio-item:hover .portfolio-info {
   opacity: 1;
-  bottom: 20px;
+  bottom: 10px; /* Slide-up effect on hover */
 }
+
+.portfolio .portfolio-info h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: white; /* Adjust to match your theme */
+}
+
+.portfolio .portfolio-info p {
+  font-size: 14px;
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.8); /* Softer text color */
+}
+
+.portfolio .portfolio-info .preview-link,
+.portfolio .portfolio-info .details-link {
+  position: absolute;
+  right: 14px;
+  font-size: 24px;
+  top: calc(50% - 12px);
+  color: rgba(255, 255, 255, 0.8); /* Icon color */
+  transition: color 0.3s;
+}
+
+.portfolio .portfolio-info .preview-link:hover,
+.portfolio .portfolio-info .details-link:hover {
+  color: var(--accent-color); /* Accent color on hover */
+}
+
+/* Grid Adjustments */
+@media (min-width: 768px) {
+  .portfolio .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .portfolio .portfolio-item {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 575px) {
+  .portfolio .portfolio-item img {
+    height: 200px; /* Smaller images for mobile */
+  }
+}
+
 
 /*--------------------------------------------------------------
 # Contact Section
